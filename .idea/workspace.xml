@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c947e59-bd84-4dba-bd7d-14cf3f0fd933" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/page/object/AvicShopPage.java" afterDir="false" />
+    <list default="true" id="4c947e59-bd84-4dba-bd7d-14cf3f0fd933" name="Changes" comment="Commit HT2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/page/object/AvicPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/BasicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WebDriverSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/WebDriverSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WebDriverSettings.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.BasicTest">
+  <component name="RunManager" selected="TestNG.BasicTest.searchElementLoadingTime">
     <configuration name="BasicTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Mykola_Halahan_HT3" />
       <extension name="coverage">
@@ -69,6 +69,42 @@
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.BasicTest" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicTest.myTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Mykola_Halahan_HT3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.BasicTest" />
+      <option name="METHOD_NAME" value="myTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicTest.searchElementLoadingTime" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Mykola_Halahan_HT3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.BasicTest" />
+      <option name="METHOD_NAME" value="searchElementLoadingTime" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -95,6 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BasicTest.searchElementLoadingTime" />
+        <item itemvalue="TestNG.BasicTest.myTest" />
         <item itemvalue="TestNG.BasicTest" />
         <item itemvalue="TestNG.BasicTest.siteTitleTest" />
       </list>
@@ -151,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662487440559</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit HT2">
+      <created>1662728466944</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662728466944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +224,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Commit HT2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit HT2" />
   </component>
 </project>
