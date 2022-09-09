@@ -1,20 +1,23 @@
 package org.example;
 
-import org.junit.After;
-import org.junit.Before;
+
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+
 
 public class WebDriverSettings {
-    public ChromeDriver driver;
-    @Before
+    public ChromeDriver chromeDriver;
+    @BeforeTest
     public void setUp() {
-        driver = new ChromeDriver();
+        chromeDriver = new ChromeDriver();
         System.out.println("Test start");
     }
 
-    @After
+    @AfterTest
     public void close() {
-        driver.quit();
+        chromeDriver.quit();
         System.out.println("Test close");
     }
 }

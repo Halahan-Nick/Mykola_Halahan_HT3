@@ -1,13 +1,14 @@
 package org.example;
-import org.junit.Assert;
-import org.junit.Test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -27,10 +28,10 @@ public class BasicTest extends WebDriverSettings {
      */
 
     private void getPhoneLinkFromHeader() {
-        String phoneLink = String.valueOf(driver.findElement
+        String phoneLink = String.valueOf(chromeDriver.findElement
                 (By.xpath
                         ("//div[@class='header-top__item']//a[@href='tel:0800307900']")));
-        Assert.assertTrue(phoneLink, true);
+        Assert.assertTrue(true, phoneLink);
     }
 
     /**
@@ -49,9 +50,9 @@ public class BasicTest extends WebDriverSettings {
 
     @Test
     public void siteTitleTest() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://avic.ua/ua");
-        String title = driver.getTitle();
+        chromeDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        chromeDriver.get("https://avic.ua/ua");
+        String title = chromeDriver.getTitle();
         Assert.assertTrue(title.equals
                 ("AVIC ™ - зручний інтернет-магазин побутової техніки та електроніки в Україні. | Avic"));
         System.out.println
@@ -65,9 +66,9 @@ public class BasicTest extends WebDriverSettings {
     @Test
     public void sitePhoneTest() {
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        chromeDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        driver.get("https://avic.ua/ua");
+        chromeDriver.get("https://avic.ua/ua");
         getPhoneLinkFromHeader();
         System.out.println
                 ("Phone Number 0800307900 is in site header as a link");
@@ -75,9 +76,9 @@ public class BasicTest extends WebDriverSettings {
 
     @Test
     public void searchElementLoadingTime() {
-        driver.get("https://avic.ua/ua");
+        chromeDriver.get("https://avic.ua/ua");
 
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(chromeDriver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("input_search")));
         System.out.println
                 ("Input search field was found on main page");
@@ -94,12 +95,12 @@ public class BasicTest extends WebDriverSettings {
 
     @Test
     public void searchWithEnterFromKeyboard() {
-        driver.manage().window().setSize(new Dimension(1280, 800));
-        driver.get("https://avic.ua/ua");
-        WebElement input = driver.findElement(By.xpath
+        chromeDriver.manage().window().setSize(new Dimension(1280, 800));
+        chromeDriver.get("https://avic.ua/ua");
+        WebElement input = chromeDriver.findElement(By.xpath
                 (("//div[@class='header-bottom__search']//input[@id='input_search']")));
         input.sendKeys("iPhone", Keys.ENTER);
-        String title = driver.getTitle();
+        String title = chromeDriver.getTitle();
         Assert.assertEquals("Результати пошуку", title);
         getPhoneLinkFromHeader();
         System.out.println
@@ -119,21 +120,20 @@ public class BasicTest extends WebDriverSettings {
     @Test
     public void searchWithFindButton() {
         String expectedURL = "https://avic.ua/ua/search-results?query=Iphone";
-        driver.manage().window().setSize(new Dimension(1280, 800));
-        driver.get("https://avic.ua/ua");
-        WebElement inputSearchField = driver.findElement(By.id(("input_search")));
-        WebElement searchButton = driver.findElement(By.xpath("//button[@class='button-reset search-btn']"));
+        chromeDriver.manage().window().setSize(new Dimension(1280, 800));
+        chromeDriver.get("https://avic.ua/ua");
+        WebElement inputSearchField = chromeDriver.findElement(By.id(("input_search")));
+        WebElement searchButton = chromeDriver.findElement(By.xpath("//button[@class='button-reset search-btn']"));
         inputSearchField.sendKeys("Iphone");
         searchButton.click();
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(chromeDriver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("input_search")));
         getPhoneLinkFromHeader();
-        String actualURL = driver.getCurrentUrl();
-        Assert.assertTrue("URL does not match", expectedURL.equals(actualURL));
+        String actualURL = chromeDriver.getCurrentUrl();
+        Assert.assertTrue(expectedURL.equals(actualURL), " Expected and Actual URL  match");
 
         System.out.println("Iphone search was executed" +
                 "Phone Number 0800307900 is in site header as a link");
     }
 
 }
-
