@@ -52,9 +52,10 @@ public class BasicTest {
         AvicPage avicPage = new AvicPage();
         avicPage.navigateTo();
         avicPage.implicityTimer(10);
-        String actualXPath = avicPage.
-                getPhoneLinkFromHeader("//div[@class='header-top__item']//a[@href='tel:0800307900']");
-        String expectedXPath = "//div[@class='header-top__item']//a[@href='tel:0800307900']";
+            String phoneXPath = "//div[@class='header-top__item']//a[@href='tel:0800307900']";
+            String actualXPath = avicPage.
+                getPhoneLinkFromHeader(phoneXPath);
+        String expectedXPath = phoneXPath;
         Assert.assertEquals(actualXPath, expectedXPath);
         System.out.println
                 ("Phone Number 0800307900 is in site header as a link");
@@ -85,7 +86,6 @@ public class BasicTest {
      * 3. We type "iPhone" text in search field
      * 4. We press "Enter" button from keyboard
      * 5. Assert checks Site title is same as Expected
-     * 6. Assert checks site header contains Phone Number 0800307900 as a link
      */
 
     @Test
@@ -93,45 +93,43 @@ public class BasicTest {
         AvicPage avicPage = new AvicPage();
         avicPage.navigateTo();
         avicPage.windowResolution(1280,720);
-        avicPage.findSearchInputField();
-        avicPage.searchField("IPhone");
-        input.sendKeys("iPhone", Keys.ENTER);
-
+            String searchFieldXPath = "//div[@class='header-bottom__search']//input[@id='input_search']";
+            String query = "IPhone";
+        avicPage.searchFieldInputByXPath(query, searchFieldXPath);
+        avicPage.clickEnterFromKeyboard(searchFieldXPath);
         String actualTitle = avicPage.getTitle();
-        String expectedTitle = "Результати пошуку";
+            String expectedTitle = "Результати пошуку";
         Assert.assertEquals(actualTitle, expectedTitle);
-
         System.out.println
                 ("Iphone search was executed with press Enter button from keyboard" +
                         "Page title same as Expected");
+        avicPage.quitDriver();
     }
-//
-//    /**
-//     * test checks flow:
-//     * 1. Is there search field in header
-//     * 2. We type "iPhone" text in search field
-//     * 3. We press "Search" button from UI
-//     * 4. Assert checks Actual URL is same as Expected
-//     * 5. Assert checks site header contains Phone Number 0800307900 as a link
-//     */
-//
-//    @Test
-//    public void searchWithFindButton() {
-//        String expectedURL = "https://avic.ua/ua/search-results?query=Iphone";
-//        driver.manage().window().setSize(new Dimension(1280, 800));
-//        driver.get("https://avic.ua/ua");
-//        WebElement inputSearchField = driver.findElement(By.id(("input_search")));
-//        WebElement searchButton = driver.findElement(By.xpath("//button[@class='button-reset search-btn']"));
-//        inputSearchField.sendKeys("Iphone");
-//        searchButton.click();
-//        new WebDriverWait(driver, Duration.ofSeconds(10))
-//                .until(ExpectedConditions.presenceOfElementLocated(By.id("input_search")));
-//        getPhoneLinkFromHeader();
-//        String actualURL = driver.getCurrentUrl();
-//        Assert.assertTrue(expectedURL.equals(actualURL), " Expected and Actual URL  match");
-//
-//        System.out.println("Iphone search was executed" +
-//                "Phone Number 0800307900 is in site header as a link");
-//    }
+
+    /**
+     * test checks flow:
+     * 1. Is there search field in header
+     * 2. We type "iPhone" text in search field
+     * 3. We press "Search" button from UI
+     * 4. Assert checks Actual URL is same as Expected
+     */
+
+    @Test
+    public void searchWithFindButton() {
+        AvicPage avicPage = new AvicPage();
+        avicPage.navigateTo();
+        avicPage.windowResolution(1280,720);
+            String expectedURL = "https://avic.ua/ua/search-results?query=IPhone";
+            String searchButtonXPath = "//button[@class='button-reset search-btn']";
+            String searchFieldById = "input_search";
+            String query = "IPhone";
+        avicPage.searchFieldInputById(query,searchFieldById);
+        avicPage.clickSearchButton(searchButtonXPath);
+        Assert.assertEquals(avicPage.getCurrentURL(), expectedURL, " Expected and Actual URL  match");
+
+        System.out.println("Iphone search was executed" +
+                "Phone Number 0800307900 is in site header as a link");
+        avicPage.quitDriver();
+    }
 
 }

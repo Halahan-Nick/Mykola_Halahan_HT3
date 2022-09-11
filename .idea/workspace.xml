@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c947e59-bd84-4dba-bd7d-14cf3f0fd933" name="Changes" comment="Commit HT2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/page/object/AvicPage.java" afterDir="false" />
+    <list default="true" id="4c947e59-bd84-4dba-bd7d-14cf3f0fd933" name="Changes" comment="Commit HT3 60%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/page/object/AvicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/page/object/AvicPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/BasicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WebDriverSettings.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "module",
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;module&quot;,
+      &quot;directory&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.BasicTest.searchElementLoadingTime">
+}</component>
+  <component name="RunManager" selected="TestNG.BasicTest.searchWithFindButton">
     <configuration name="BasicTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Mykola_Halahan_HT3" />
       <extension name="coverage">
@@ -111,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicTest.siteTitleTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicTest.searchWithEnterFromKeyboard" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Mykola_Halahan_HT3" />
       <extension name="coverage">
         <pattern>
@@ -121,7 +118,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.BasicTest" />
-      <option name="METHOD_NAME" value="siteTitleTest" />
+      <option name="METHOD_NAME" value="searchWithEnterFromKeyboard" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicTest.searchWithFindButton" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Mykola_Halahan_HT3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.BasicTest" />
+      <option name="METHOD_NAME" value="searchWithFindButton" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -131,10 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BasicTest.searchWithFindButton" />
+        <item itemvalue="TestNG.BasicTest.searchWithEnterFromKeyboard" />
+        <item itemvalue="TestNG.BasicTest" />
         <item itemvalue="TestNG.BasicTest.searchElementLoadingTime" />
         <item itemvalue="TestNG.BasicTest.myTest" />
-        <item itemvalue="TestNG.BasicTest" />
-        <item itemvalue="TestNG.BasicTest.siteTitleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662728466944</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit HT3 60%">
+      <created>1662759339327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662759339327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +248,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Commit HT2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit HT2" />
+    <MESSAGE value="Commit HT3 60%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit HT3 60%" />
   </component>
 </project>

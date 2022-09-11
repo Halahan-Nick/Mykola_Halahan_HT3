@@ -15,6 +15,7 @@ public class AvicPage {
     public AvicPage() {
         this.driver = new ChromeDriver();
     }
+
     /**
      * close web-driver page after test implementation
      */
@@ -32,7 +33,7 @@ public class AvicPage {
     /**
      * implicity timer
      */
-    public void implicityTimer(int k){
+    public void implicityTimer(int k) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(k));
     }
 
@@ -40,13 +41,14 @@ public class AvicPage {
      * get page title
      */
     public String getTitle() {
-        return  driver.getTitle();
+        return driver.getTitle();
     }
+
     /**
      * test load time of elementName from page is less than time in seconds
      */
 
-    public void loadTime(int time,String elementName) {
+    public void loadTime(int time, String elementName) {
         new WebDriverWait(driver, Duration.ofSeconds(time))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id(elementName)));
     }
@@ -54,25 +56,53 @@ public class AvicPage {
     /**
      * set web-driver page window resolution
      */
-    public void windowResolution(int width,int height) {
-        driver.manage().window().setSize(new Dimension(width,height));
+    public void windowResolution(int width, int height) {
+        driver.manage().window().setSize(new Dimension(width, height));
     }
 
     /**
-     * set web-driver page window resolution
+     * send search request from keyboard page with Enter
      */
-    public void findSearchInputField() {
-        driver.findElement(By.xpath
-                (("//div[@class='header-bottom__search']//input[@id='input_search']")));
+    public void clickEnterFromKeyboard(String headerSearchFieldXPath) {
+        WebElement clickEnterButton = driver.findElement(By.xpath(headerSearchFieldXPath));
+        clickEnterButton.sendKeys(Keys.ENTER);
     }
 
+
     /**
-     * set web-driver page window resolution
+     * set request name = query and xpath of searchfield = searchFieldByXPath
      */
-    public void searchField(String querry) {
+    public void searchFieldInputByXPath(String query, String searchFieldByXPath) {
         WebElement input = driver.findElement(By.xpath
-                (("//div[@class='header-bottom__search']//input[@id='input_search']")));
-        input.sendKeys(querry, Keys.ENTER);
+                ((searchFieldByXPath)));
+        input.sendKeys(query, Keys.ENTER);
+    }
+
+    /**
+     * set request name = query and xpath of searchfield = searchFieldById
+     */
+    public void searchFieldInputById (String query, String searchFieldById) {
+        WebElement input = driver.findElement(By.id
+                ((searchFieldById)));
+        input.sendKeys(query, Keys.ENTER);
+    }
+
+    /**
+     * send search request from keyboard page with UI button by XPath
+     */
+    public void clickSearchButton(String searchButtonXPath) {
+        WebElement searchButton = driver.findElement(By.xpath(searchButtonXPath));
+        searchButton.click();
+    }
+
+    /**
+     * send search request from keyboard page with Enter
+     *
+     * @return
+     */
+    public String getCurrentURL () {
+        String currentURL = driver.getCurrentUrl();
+        return currentURL;
     }
 
     /**
@@ -82,8 +112,7 @@ public class AvicPage {
     public String getPhoneLinkFromHeader(String phoneXPath) {
 
         driver.findElement
-                (By.xpath
-                        ("//div[@class='header-top__item']//a[@href='tel:0800307900']"));
+                (By.xpath("//div[@class='header-top__item']//a[@href='tel:0800307900']"));
         return phoneXPath;
     }
 
